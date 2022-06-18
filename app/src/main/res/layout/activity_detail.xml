@@ -7,13 +7,22 @@
     android:background="@color/black"
     tools:context=".DetailActivity">
 
-    <TextView
-        android:id="@+id/result_info"
+    <fragment
+        android:id="@+id/fr_result_info"
+        android:name="com.example.weather.DefaultFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:layout_marginTop="30sp"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp" />
+        android:layout_height="300sp">
+
+    </fragment>
+
+    <fragment
+        android:name="com.example.weather.Search"
+        android:layout_below="@+id/fr_result_info"
+        android:id="@+id/fr_search"
+        android:layout_width="match_parent"
+        android:layout_height="200sp">
+
+    </fragment>
+
+
 </RelativeLayout>

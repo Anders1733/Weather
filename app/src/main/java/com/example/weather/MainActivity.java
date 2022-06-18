@@ -1,6 +1,8 @@
 package com.example.weather;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -9,6 +11,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import java.sql.SQLData;
 
@@ -58,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        ContentValues contentValues = new ContentValues();
+
+        Fragment fragment = new ResultInfo();
+        FragmentManager fm = getSupportFragmentManager();
 
         numbersAdapter = new NumbersAdapter(cities, this);
         numbersList.setAdapter(numbersAdapter);
